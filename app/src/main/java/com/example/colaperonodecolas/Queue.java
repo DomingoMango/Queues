@@ -31,4 +31,12 @@ public class Queue {
         }
         Log.i("log",result);
     }
+
+    public QueueNode getFirst() {
+        return first;
+    }
+
+    public QueueNode getLast() {
+        return last;
+    }
 }
