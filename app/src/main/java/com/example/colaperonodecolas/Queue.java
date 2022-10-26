@@ -22,4 +22,13 @@ public class Queue {
             last=node;
         }
     }
+    public void print(){
+        String result="";
+        QueueNode aux= last;
+        while(aux.getNext()!= null){
+            result += last+"->";
+            aux= aux.getNext();
+        }
+        Log.i("log",result);
+    }
 }
