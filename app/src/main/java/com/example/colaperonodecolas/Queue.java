@@ -1,6 +1,7 @@
 package com.example.colaperonodecolas;
 
 import android.util.Log;
+import android.widget.Toast;
 
 public class Queue {
     private QueueNode first;
@@ -17,21 +18,33 @@ public class Queue {
             if(first==null){
                 first=node;
             }else{
-                node.setNext(last);
+                last.setNext(node);
             }
             last=node;
         }
     }
     public void print(){
         String result="";
-        QueueNode aux= last;
+        QueueNode aux= first;
         while(aux.getNext()!= null){
-            result += last+"->";
+            result += aux+"->";
             aux= aux.getNext();
         }
         Log.i("log",result);
     }
-
+    public int remove()
+    {
+        if(first==null){
+            return -1;
+        }else{
+            QueueNode kiwi = first;
+            first = first.getNext();
+            if(first==null){
+                last=null;
+            }
+            return kiwi.getData();
+        }
+    }
     public QueueNode getFirst() {
         return first;
     }
